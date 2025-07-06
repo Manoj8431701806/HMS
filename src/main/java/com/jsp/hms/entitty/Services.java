@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -14,11 +15,11 @@ public class Services {
 	private String serviceName;
 	private int price;
 	private String duration;
-	@OneToOne
+	@ManyToOne
 	private Customer customer;
-	@OneToOne
+	@ManyToOne
 	private Workers worker;
-	@OneToOne
+	@ManyToOne
 	private Appointments apointment;
 	public Customer getCustomer() {
 		return customer;
